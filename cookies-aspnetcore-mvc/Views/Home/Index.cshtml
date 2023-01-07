@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <div class="panel panel-default">
+        <div class="panel-body">Cookies in ASP.Net Core MVC- Complete Guide
+
+            <div class="col-sm-6 mt-5">
+                <form asp-controller="Home" method="post">
+                    <input type="text" name="name" id="txt_cookies" class="form-control" placeholder="Enter cookie here" autocomplete="off"/>
+
+                    @*Buutons that take into Actions*@
+                    <div class="mt-2">
+                        <input type="submit" id="btnWrite" asp-action="AddCookie" value="Write Cookie" class="btn btn-success" />
+                        <input type="submit" id="btnRead" asp-action="ReadCookie" value="Read Cookie" class="btn btn-primary" />
+                        <input type="submit" id="btnDelete" asp-action="DeleteCookie" value="Remove Cookie" class="btn btn-danger" />
+                    </div>
+
+                    <div class="mt-4 ml-5" style="border: 1px solid #ffc107;">
+                      The Coookie result dispaly here:
+                        @if (TempData["Message"] != null)
+                        {
+                            <strong><label id="lbl_result" style="color: red;">@TempData["Message"]</label></strong>
+                        }
+                       
+                    </div>
+
+                </form>
+           </div>
+
+        </div>
+    </div>
+
+</div>
